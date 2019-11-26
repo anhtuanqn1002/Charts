@@ -44,6 +44,16 @@ open class RadarChartView: PieRadarChartViewBase
     internal var _yAxisRenderer: YAxisRendererRadarChart!
     internal var _xAxisRenderer: XAxisRendererRadarChart!
     
+    public var xAxisRenderer: XAxisRendererRadarChart {
+        get { return _xAxisRenderer }
+        set { _xAxisRenderer = newValue }
+    }
+    
+    public var yAxisRenderer: YAxisRendererRadarChart {
+        get { return _yAxisRenderer }
+        set { _yAxisRenderer = newValue }
+    }
+    
     public override init(frame: CGRect)
     {
         super.init(frame: frame)
