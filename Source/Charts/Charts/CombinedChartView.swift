@@ -182,6 +182,9 @@ open class CombinedChartView: BarLineChartViewBase, CombinedChartDataProvider
     /// `true` if drawing shadows (maxvalue) for each bar is enabled, `false` ifnot
     open var isDrawBarShadowEnabled: Bool { return (renderer as! CombinedChartRenderer).drawBarShadowEnabled }
     
+    /// `true` if drawing values at bottom bars is enabled, `false` ifnot
+    open var isDrawValueAtBottomBarEnabled: Bool { return (renderer as! CombinedChartRenderer).drawValueAtBottomBarEnabled }
+    
     /// the order in which the provided data objects should be drawn.
     /// The earlier you place them in the provided array, the further they will be in the background. 
     /// e.g. if you provide [DrawOrder.Bar, DrawOrder.Line], the bars will be drawn behind the lines.

@@ -22,6 +22,9 @@ open class CombinedChartRenderer: DataRenderer
     /// if set to true, a grey area is drawn behind each bar that indicates the maximum value
     @objc open var drawBarShadowEnabled = false
     
+    /// if set to true, all values are drawn at bottom of their bars, instead of at their top
+    @objc open var drawValueAtBottomBarEnabled = false
+    
     internal var _renderers = [DataRenderer]()
     
     internal var _drawOrder: [CombinedChartView.DrawOrder] = [.bar, .bubble, .line, .candle, .scatter]
@@ -188,6 +191,9 @@ open class CombinedChartRenderer: DataRenderer
     
     /// `true` if drawing shadows (maxvalue) for each bar is enabled, `false` ifnot
     @objc open var isDrawBarShadowEnabled: Bool { return drawBarShadowEnabled }
+    
+    /// `true` if drawing values at bottom bars is enabled, `false` ifnot
+    @objc open var isDrawValueAtBottomBarEnable: Bool { return drawValueAtBottomBarEnabled }
     
     /// the order in which the provided data objects should be drawn.
     /// The earlier you place them in the provided array, the further they will be in the background.

@@ -496,6 +496,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
             var posOffset: CGFloat
             var negOffset: CGFloat
             let drawValueAboveBar = dataProvider.isDrawValueAboveBarEnabled
+            let drawValueAtBottomBar = dataProvider.isDrawValueAtBottomBarEnabled
             
             for dataSetIndex in 0 ..< barData.dataSetCount
             {
@@ -563,7 +564,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                                     viewPortHandler: viewPortHandler),
                                 xPos: x,
                                 yPos: val >= 0.0
-                                    ? (rect.origin.y + posOffset)
+                                    ? drawValueAtBottomBar ? rect.maxY - 20 : (rect.origin.y + posOffset)
                                     : (rect.origin.y + rect.size.height + negOffset),
                                 font: valueFont,
                                 align: .center,
